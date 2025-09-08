@@ -1,0 +1,23 @@
+services:
+  db:
+    build: .
+    container_name: db_postgres_practica1_g4
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "${POSTGRES_USER:-app_user}" ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    environment:
+      PGDATA: ${PGDATA:-/var/lib/postgresql/data/pgdata}
+    tty: true
+
+volumes:
+  db_data:
+    name: db_postgres_data

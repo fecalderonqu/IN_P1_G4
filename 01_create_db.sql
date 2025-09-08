@@ -1,0 +1,5 @@
+-- Crea base de datos si se usa un superusuario distinto al que inicia el contenedor.
+-- En contenedores de postgres oficiales, POSTGRES_DB ya crea esta DB.
+-- Este archivo queda como referencia por si deseas crear otras DB adicionales.
+-- Ejemplo:
+-- CREATE DATABASE app_db2 OWNER app_user;
