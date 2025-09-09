@@ -19,3 +19,5 @@ docker run --name "$NAME_CONTAINER" --restart unless-stopped \
     -d "$NAME_IMAGE"
 
 echo "Successfull service"
+
+##ff
